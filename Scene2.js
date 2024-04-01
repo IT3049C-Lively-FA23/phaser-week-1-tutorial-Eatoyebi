@@ -75,10 +75,27 @@ class Scene2 extends Phaser.scene {
 
         this.score = 0;
         this.scoreLabel = this.add.bit,apText(10,5, "pixelFont", "SCORE ", 16);
+
+        this.beamSound = this.sound.add("audio_beam");
+        this.explosionSound = this.sound.add("audio_explosion");
+        this.pickupSound = this.sound.add("audio_pickup");
+
+        this.music = this.sound.add("music");
+        var musicConfig = {
+            mute: false, 
+            volume: 1,
+            rate: 1,
+            detune: 0,
+            seek: 0,
+            loop: false,
+            delay: 0
+        }
+        this.music.play(musicConfig);
     }
 
     pickPowerUp(player, powerUp) {
         powerUp.disableBody(true, true);
+        this.pickupSound.play();
     }
 
     hurtPlayer(player, enemy) {
@@ -103,6 +120,7 @@ class Scene2 extends Phaser.scene {
         this.score += 15;
         var scoreFormatted = this.zeroPad(this.score, 6);
         this.scoreLabel.text = "SCORE " + scoreFormatted;
+        this.explosionSound.play();
     }
 
     update() {
@@ -124,6 +142,7 @@ class Scene2 extends Phaser.scene {
 
     shootBeam(){
         var beam = new beam(this);
+        this.beamSound.play();
     }
 
     moveShip(ship, speed) {
