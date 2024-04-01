@@ -1,4 +1,4 @@
-class Scene2 extends Phaser.scene {
+class Scene2 extends Phaser.Scene {
     constructor() {
         super("playGame");
     }
@@ -28,7 +28,6 @@ class Scene2 extends Phaser.scene {
         this.physics.world.setBoundsCollision();
 
         this.powerUps = this.physics.add.group();
-
 
         for(var i = 0; i<= gameSettings.maxPowerups; i++){
             var powerUp = this.physics.add.sprite(16, 16, "power-up");
