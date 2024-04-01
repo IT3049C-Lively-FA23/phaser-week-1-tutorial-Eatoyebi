@@ -8,13 +8,18 @@ Instructions to this assignment can be found [here](https://uc.instructure.com/c
 ## Checklist:
 - [ ] update the assignment checks above to the correct link
 - [ ] make sure the assignment checks pass
-- [ ] fill out the self evaluation and Reflection
-- [ ] submit the repository link on Canvas
+- [ x] fill out the self evaluation and Reflection
+- [ x] submit the repository link on Canvas
 
 ## Self-Evaluation:
 
 how many points out of 20 do you deserve on this assignment:
 
+I deserve full marks.
+
 ## Self-Reflection:
 
+I really like this assignment, I feel like I learned a lot. The tutorial was definitely very useful, I only did it, give us the steps, but it also clarified the reson behind it so that I could use what I learned and other projects. However, I did struggle with getting it to appear, I'm assuming it's because of what I had to download, so I set up a meeting with the IT learning center to figure that out, besides that it was smooth sailing.
+
 ### How long it took me to finish this?
+6 hours
