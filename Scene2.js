@@ -53,7 +53,7 @@ class Scene2 extends Phaser.Scene {
 
         this.projectiles = this.add.group();
 
-        this.physics.add.collifer(this.projectiles, this.powerUps, function(projectile, powerUp){
+        this.physics.add.collider(this.projectiles, this.powerUps, function(projectile, powerUp){
             projectile.destroy();
         });
         
@@ -66,14 +66,14 @@ class Scene2 extends Phaser.Scene {
         graphics.beginPath();
         graphics.moveTo(0,0);
         graphics.lineTo(config.width, 0);
-        graphics.lineTo(config,width, 20);
+        graphics.lineTo(config.width, 20);
         graphics.lineTo(0, 20);
         graphics.lineTo(0, 0);
         graphics.closePath();
         graphics.fillPath();
 
         this.score = 0;
-        this.scoreLabel = this.add.bit,apText(10,5, "pixelFont", "SCORE ", 16);
+        this.scoreLabel = this.add.bitmapText(10,5, "pixelFont", "SCORE ", 16);
 
         this.beamSound = this.sound.add("audio_beam");
         this.explosionSound = this.sound.add("audio_explosion");
@@ -102,7 +102,7 @@ class Scene2 extends Phaser.Scene {
         if(this.player.alpha < 1){
             return;
         }
-        var explosion = new explosion(this, player.x, player.y);
+        var explosion = new Explosion(this, player.x, player.y);
         player.disableBody(true, true);
         this.time.addEvent({
             delay: 1000,
@@ -113,7 +113,7 @@ class Scene2 extends Phaser.Scene {
     }
 
     hitEnemy(projectile, enemy) {
-        var explosion = new explosion(this, enemy.x, enemy.y);
+        var explosion = new Explosion(this, enemy.x, enemy.y);
         projectile.destroy();
         this.resetShipPos(enemy);
         this.score += 15;
